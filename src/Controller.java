@@ -1,6 +1,10 @@
 import model.Provider;
+import vo.Vacancy;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by set on 28.02.17.
@@ -20,5 +24,20 @@ public class Controller {
         return "Controller{" +
                 "providers=" + Arrays.toString(providers) +
                 '}';
+    }
+
+    public void scan() {
+        List<Vacancy> list =new ArrayList<>();
+        String search = "";
+        try
+        {
+           for(Provider p : providers){
+             list.addAll(p.getJavaVacancies(search));
+          }
+       } catch (NullPointerException  e){
+
+       } finally {System.out.println("Size of vacancies: " + list.size());
+       }
+
     }
 }

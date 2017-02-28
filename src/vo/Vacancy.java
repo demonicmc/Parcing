@@ -6,15 +6,13 @@ import java.util.List;
  * Created by set on 28.02.17.
  */
 public class Vacancy {
-    public List<Vacancy> getJavaVacancies(String searchString){
-        return null;
-    }
-    String title;
-    String salary;
-    String city;
-    String companyName;
-    String siteName;
-    String url;
+
+    private String title;
+    private String salary;
+    private String city;
+    private String companyName;
+    private String siteName;
+    private String url;
 
     public String getTitle() {
         return title;
