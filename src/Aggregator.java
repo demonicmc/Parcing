@@ -1,3 +1,4 @@
+import model.HHStrategy;
 import model.Provider;
 
 /**
@@ -5,7 +6,7 @@ import model.Provider;
  */
 public class Aggregator {
     public static void main(String[] args) {
-        Provider provider = new Provider();
+        Provider provider = new Provider(new HHStrategy());
         Controller controller = new Controller(provider);
         System.out.println(controller);
         controller.scan();
