@@ -1,18 +1,26 @@
-import model.Provider;
-import vo.Vacancy;
+package ru.parser;
+
+import ru.parser.model.Model;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by set on 28.02.17.
  */
 public class Controller {
-    private Provider[] providers;
+//    private Provider[] providers;
+    Model model;
 
-    public Controller(Provider...providers){
+    public Controller(Model model) {
+        if (model == null)
+            throw new IllegalArgumentException();
+        this.model = model;
+    }
+
+    public void onCitySelect(String cityName) throws IOException {
+        model.selectCity(cityName);
+    }
+/*  public Controller(Provider...providers){
         if(providers == null){
             throw new IllegalArgumentException();
         }
@@ -24,9 +32,9 @@ public class Controller {
         return "Controller{" +
                 "providers=" + Arrays.toString(providers) +
                 '}';
-    }
+    }*/
 
-    public void scan() {
+    /*public void scan() {
         List<Vacancy> list =new ArrayList<>();
         String search = "";
         try
@@ -39,5 +47,5 @@ public class Controller {
        } finally {System.out.println("Size of vacancies: " + list.size());
        }
 
-    }
+    }*/
 }

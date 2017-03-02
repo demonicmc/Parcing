@@ -1,6 +1,6 @@
-package model;
+package ru.parser.model;
 
-import vo.Vacancy;
+import ru.parser.vo.Vacancy;
 
 import java.util.List;
 

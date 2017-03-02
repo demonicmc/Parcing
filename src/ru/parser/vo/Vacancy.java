@@ -1,6 +1,4 @@
-package vo;
-
-import java.util.List;
+package ru.parser.vo;
 
 /**
  * Created by set on 28.02.17.
@@ -91,5 +89,17 @@ public class Vacancy {
         result = 31 * result + (siteName != null ? siteName.hashCode() : 0);
         result = 31 * result + (url != null ? url.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Vacancy{" +
+                "title='" + title + '\'' +
+                ", salary='" + salary + '\'' +
+                ", city='" + city + '\'' +
+                ", companyName='" + companyName + '\'' +
+                ", siteName='" + siteName + '\'' +
+                ", url='" + url + '\'' +
+                '}';
     }
 }
