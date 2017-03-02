@@ -47,7 +47,7 @@ public class HHStrategy implements Strategy {
                        vac.setTitle(e.select("a.search-result-item__name").text());
                        vac.setSalary(e.select("div.b-vacancy-list-salary").text());
                        vac.setCity(e.select("span.searchresult__address").text());
-                       vac.setCompanyName(e.select("a.link-secondary").text());
+                       vac.setCompanyName(e.select("a.bloko-link_secondary").text());
                        vac.setSiteName("hh");
 
                        vacancies.add(vac);

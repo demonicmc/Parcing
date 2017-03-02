@@ -1,5 +1,6 @@
 package ru.parser.model;
 
+import ru.parser.export.Export;
 import ru.parser.view.View;
 import ru.parser.vo.Vacancy;
 
@@ -13,6 +14,11 @@ import java.util.List;
 public class Model {
     private View view;
     private Provider[] providers;
+    private Export export;
+
+    public void setExport(Export export) {
+        this.export = export;
+    }
 
     public Model(View view, Provider... providers){
         if (view==null || providers==null || providers.length==0)
@@ -27,6 +33,7 @@ public class Model {
         for (Provider p:providers) {
                 vacancies.addAll(p.getJavaVacancies(city));
         }
+        export.export(vacancies);
         view.update(vacancies);
     }
 }

@@ -1,5 +1,6 @@
 package ru.parser;
 
+import ru.parser.export.Excell;
 import ru.parser.model.HHStrategy;
 import ru.parser.model.Model;
 import ru.parser.model.Provider;
@@ -15,9 +16,12 @@ public class Aggregator {
         Provider provider = new Provider(new HHStrategy());
         HtmlView view = new HtmlView();
         Model model = new Model(view,provider);
+        model.setExport(new Excell());
         Controller controller = new Controller(model);
         view.setController(controller);
         view.userCitySelectEmulationMethod();
+
+
 
     }
 }

@@ -16,13 +16,15 @@ public class HtmlView implements View {
 
     private Controller controller;
 
-    private final String filePath = "./src/" + this.getClass().getPackage().getName().replaceAll("\\.", "/") + "/vacancies.html";
+    private final String filePath = "./src/main/java/" + this.getClass().getPackage().getName().replaceAll("\\.", "/") + "/vacancies.html";
 
     public HtmlView() {
+
     }
 
     public HtmlView(Controller controller) {
         this.controller = controller;
+
     }
 
     public void userCitySelectEmulationMethod() throws IOException{
